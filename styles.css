@@ -1,0 +1,644 @@
+
+:root {
+    --background-color: #00090E;
+    --placeholder: #FFFFFF;
+    --text-color: #E1E1E1;
+    --primary-color: #81FE88;
+    --secondary-color: #888888;
+    --tag-color: #171D1F;
+    --itens-background: #171D1F;
+    --font-family: "Prompt", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#contador-nome,
+#contador-descricao {
+    color: #81FE88;
+    font-size: 12px;
+}
+
+#contador-descricao {
+    display: block;
+    margin-top: -3px;
+}
+
+#descricao {
+    resize: none;
+}
+
+#nome,
+#descricao,
+#input-tags {
+    background-color: var(--placeholder);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 100vh;
+    gap: 27px;
+    padding: 56px 0;
+}
+
+main {
+    background-color: var(--itens-background);
+    border-radius: 10px;
+    padding: 32px;
+    display: flex;
+    gap: 24px;
+}
+
+div.container-imagem {
+    border: 2px solid var(--primary-color);
+}
+
+aside {
+    background-color: var(--itens-background);
+    border: 10px;
+    height: 100%;
+    padding: 40px 16px;
+    text-align: center;
+}
+
+.lista-links {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 80px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.lista-links li a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 22px;
+}
+
+.lista-links li:first-of-type a {
+    color: var(--primary-color);
+}
+
+.link-destaque {
+    border: 1px solid var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.titulo-projeto {
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #81FE88;
+    margin-bottom: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+form div label {
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px;
+}
+
+form div input,
+textarea {
+    width: 100%;
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-family);
+    line-height: 22.5px;
+}
+
+form div input {
+    height: 39px;
+}
+
+textarea {
+    height: 161px;
+}
+
+.container-descricao {
+    width: 422px;
+}
+
+.container-imagem {
+    height: 368px;
+    padding: 24px 16px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-image {
+    border-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-upload-imagem button {
+    margin: 16px 0 8px 0;
+    background-color: var(--itens-background);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    color: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 18px;
+    position: relative;
+}
+
+.container-upload-imagem button::after {
+    content: "";
+    background-image: url(./img/upload.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
+.container-imagem-nome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary-color);
+    font-size: 15px;
+}
+
+.descricao-tags {
+    color: #888888;
+    font-size: 14px;
+    margin: 0;
+    margin-top: -12px;
+    margin-bottom: 6px;
+}
+
+.tags-disponiveis {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    gap: 8px;
+}
+
+.tags-disponiveis span {
+    padding: 6px 12px;
+    border: 1px solid #35413A;
+    border-radius: 20px;
+    background-color: #171D1F;
+    color: #81FE88;
+    font-size: 13px;
+}
+
+.lista-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.lista-tags li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    max-width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.container-botoes {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.container-botoes button {
+    width: 50%;
+    padding: 12px 32px 12px 12px;
+    text-align: center;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.botao-descartar {
+    background-color: var(--itens-background);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    position: relative;
+}
+
+.botao-descartar::after {
+    content: "";
+    background-image: url("./img/trash.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
+.botao-publicar {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    position: relative;
+}
+
+.botao-publicar::after {
+    content: "";
+    background-image: url("./img/arrow_forward2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
+/* Menu hambúrguer escondido no computador */
+.menu-hamburguer {
+    display: none;
+}
+
+.menu {
+    display: block;
+}
+
+.link-destaque img {
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 1250px) {
+    body {
+        display: block;
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        padding: 12px 16px 20px;
+        overflow-x: hidden;
+    }
+
+    /* Cabeçalho */
+    aside {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 8px 0 18px;
+        background: transparent;
+        text-align: left;
+    }
+
+    aside > img {
+        width: 130px;
+        max-width: 60%;
+        height: auto;
+    }
+
+    /* Botão hambúrguer */
+    .menu-hamburguer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-left: auto;
+        flex-shrink: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+    }
+
+    .menu-hamburguer span {
+        display: block;
+        width: 36px;
+        height: 4px;
+        background-color: white;
+        border-radius: 3px;
+    }
+
+    /* Menu fechado */
+    aside nav.menu {
+        display: none;
+    }
+
+    /* Menu aberto */
+    aside nav.menu.ativo {
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 10;
+        width: 200px;
+        padding: 20px;
+        background-color: var(--itens-background);
+        border: 1px solid var(--primary-color);
+        border-radius: 8px;
+        text-align: left;
+    }
+
+    /* Links em coluna */
+    aside nav.menu.ativo .lista-links {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-top: 0;
+        list-style: none;
+    }
+
+    aside nav.menu.ativo .lista-links li {
+        display: block;
+        width: 100%;
+    }
+
+    aside nav.menu.ativo .lista-links li a {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        font-size: 16px;
+        text-align: left;
+        text-decoration: none;
+        color: var(--secondary-color);
+    }
+
+    aside nav.menu.ativo .lista-links li:first-of-type a {
+        color: var(--primary-color);
+    }
+
+    aside nav.menu.ativo .lista-links li a img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+
+    aside nav.menu.ativo .lista-links .link-destaque {
+        padding: 10px;
+        border: 1px solid var(--primary-color);
+        border-radius: 8px;
+    }
+
+    /* Centralizar o texto e o ícone de Publicar */
+        aside nav.menu.ativo .lista-links li a.link-destaque {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 12px;
+    }
+
+    aside nav.menu.ativo .lista-links li a.link-destaque img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.5;
+    }
+
+    /* Conteúdo principal */
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        padding: 0;
+        background: transparent;
+        border-radius: 0;
+    }
+
+    /* Reorganização do título e formulário */
+    .container-descricao {
+        display: contents;
+    }
+
+    .titulo-projeto {
+        order: -2;
+        margin: 0;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--primary-color);
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .container-upload-imagem {
+        order: -1;
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Pré-visualização da imagem */
+    .container-imagem {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 8px;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+    .main-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+    }
+
+    .container-upload-imagem button {
+        margin: 8px 0 0;
+        padding: 8px 12px;
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .container-imagem-nome {
+        display: none;
+    }
+
+    /* Formulário */
+    form {
+        order: 0;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    form > div {
+        min-width: 0;
+    }
+
+    form div label {
+        margin-bottom: 4px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    small#contador-descricao {
+        display: block;
+        margin-top: 5px;
+    }
+
+    form div input,
+    form div textarea,
+    textarea {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        padding: 8px;
+        background-color: var(--itens-background);
+        color: var(--text-color);
+        border: 1px solid #293438;
+        border-radius: 5px;
+        font-family: var(--font-family);
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    form div input {
+        height: 32px;
+    }
+
+    textarea {
+        height: 80px;
+    }
+
+    form input::placeholder,
+    form textarea::placeholder {
+        color: var(--secondary-color);
+        opacity: 1;
+    }
+
+    #contador-nome,
+    #contador-descricao {
+        font-size: 10px;
+    }
+
+    #contador-descricao {
+        margin-top: 2px;
+    }
+
+    /* Tags */
+    .descricao-tags,
+    .tags-disponiveis {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    div.tags-disponiveis {
+        margin-top: -5px;
+    }
+
+    .tags-disponiveis span {
+        padding: 4px 9px;
+        font-size: 10.5px;
+    }
+
+    .lista-tags {
+        gap: 6px;
+    }
+
+    .lista-tags li {
+        font-size: 12px;
+    }
+
+    .container-categorias label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Botões inferiores */
+    .container-botoes {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        margin-top: 2px;
+    }
+
+    .container-botoes button {
+        flex: 1;
+        width: 0;
+        min-width: 0;
+        padding: 8px 20px 8px 8px;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .botao-descartar::after,
+    .botao-publicar::after {
+        width: 12px;
+        height: 12px;
+        margin-left: 5px;
+    }
+    
+    .link-destaque img {
+        display: inline-block;
+    }
+}
