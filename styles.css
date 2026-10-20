@@ -582,6 +582,10 @@ textarea {
         margin-top: 2px;
     }
 
+    input#nome, textarea#descricao, input#input-tags {
+        color: var(--background-color);
+    }
+
     /* Tags */
     .descricao-tags,
     .tags-disponiveis {
